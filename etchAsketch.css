@@ -1,91 +1,143 @@
-@font-face {
-    font-family: "perfectDark";
-    src: url("pdark.ttf");
-}
-
-body {
-    height: 100vh;
-    width: 100vw;
-    background-color: #ece5e6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.bodyContainer {
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    border: 10px solid #d12520;
-    border-radius: 60px;
-    height: 50%;
-    width: 90%;
-    align-items: center;
-    gap: 20px;
-}
-
-.userScreenContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.squaresContainer {
-    width: 410px;
-    height: 410px;
-    background-color: #fff;
-    border: 0.5px solid #d15520;
-    border-radius: 20px;
-    /* display: grid;
-    grid-template-columns: repeat(3, auto); */
-}
-
-.rightButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    align-items: center;
-}
-
-.button {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    border: 2px solid #d12520;
-    border-radius: 200px;
-    background-color: aquamarine;
-}
-
-.squaresNumber {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 125px;
-    border: 1px solid #d12520;
-    border-radius: 200px;
-    background-color: beige;
-}
-
-.colorContainer {
-    height: 200px;
-    /*   border: 1px solid #d12520;*/
-}
-
-.title {
-    color: yellow;
-    font-size: 25px;
-    font-weight: 800;
-    font-family: perfectDark;
-}
-
-.square {
-    border: 1px solid rgb(117, 107, 107, 0.1);
-}
-
-.square:hover {
-    background-color: #d15520;
-}
+    @font-face {
+        font-family: "perfectDark";
+        src: url("pdark.ttf");
+    }
+    
+    body {
+        height: 100vh;
+        width: 100vw;
+        background-color: #ece5e6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .bodyContainer {
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        border: 10px solid #d12520;
+        border-radius: 60px;
+        height: 50%;
+        width: 90%;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .userScreenContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        --picked-color: #eef;
+    }
+    
+    .squaresContainer {
+        width: 410px;
+        height: 410px;
+        background-color: #fff;
+        border: 0.5px solid #d15520;
+        border-radius: 20px;
+        --bg-color: #fff;
+    }
+    
+    .rightButtons {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .button {
+        font-weight: bold;
+        font-family: Impact;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        width: 70px;
+        border: 2px solid #224902;
+        border-radius: 20px;
+        background-color: rgb(240, 241, 221);
+        color: rgba(12, 12, 9, 0.938);
+        cursor: pointer;
+    }
+    
+    .erase {
+        font-weight: bold;
+        font-family: Impact;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        width: 70px;
+        border: 2px solid #224902;
+        border-radius: 20px;
+        background-color: rgb(240, 241, 221);
+        color: rgba(12, 12, 9, 0.938);
+        cursor: pointer;
+    }
+    
+    .button:active {
+        border-color: #fff;
+    }
+    
+    .numbers {
+        color: #fff;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .squaresNumber {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 125px;
+        border: 1px solid #d12520;
+        border-radius: 200px;
+        background-color: beige;
+    }
+    
+    .colorModes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .rainbow {
+        color: #eef;
+        cursor: pointer;
+        height: 60px;
+        width: 60px;
+        border-radius: 50px;
+        background-image: conic-gradient( red, orange, yellow, green, blue, indigo, violet);
+    }
+    
+    .colorContainer {
+        height: 200px;
+        border-radius: 10px;
+    }
+    
+    .title {
+        color: yellow;
+        font-size: 25px;
+        font-weight: 800;
+        font-family: perfectDark;
+    }
+    
+    .square {
+        border: 1px solid rgb(117, 107, 107, 0.1);
+        background-color: var(--bg-color);
+    }
+    /*
+    .square:hover {
+        background-color: var(--picked-color);
+    }
+    */
+    
+    input {
+        cursor: pointer;
+    }

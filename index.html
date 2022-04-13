@@ -13,18 +13,22 @@
     <div class="bodyContainer">
         <div class="title"> Etch A Sketch</div>
         <div class="userScreenContainer">
-            <input class="colorContainer leftSide" type="color" value="#333300">
-
+            <div class="colorModes">
+                <input class="colorContainer leftSide" type="color" value="#333300">
+                <button class="rainbow"> </button>
+            </div>
 
 
             <div class="squaresContainer"> </div>
             <div class="rightButtons">
-                <div class="button button1"> Draw</div>
-                <div class="button button2"> Erase </div>
-                <div class="button button3"> Restart</div>
+                <div class="button buttonToDraw"> Grid</div>
+                <div class="erase"> Erase </div>
+                <div class="button buttonToClear"> Clear</div>
 
-                <input type="range" class="squaresNumber" min="1" max="60" value="5">
-
+                <div class="range">
+                    <div class="numbers"> 15x15</div>
+                    <input type="range" id="squaresRange" min="1" max="100" value="15">
+                </div>
             </div>
 
         </div>
