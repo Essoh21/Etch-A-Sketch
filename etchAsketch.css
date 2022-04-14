@@ -3,8 +3,20 @@
         src: url("pdark.ttf");
     }
     
+    @font-face {
+        font-family: "zidanFont";
+        src: url("Zidan.ttf");
+    }
+    
+    a {
+        text-decoration: none;
+        color: #113
+    }
+    
     body {
+        padding: 0px;
         height: 100vh;
+        margin: 0px;
         width: 100vw;
         background-color: #ece5e6;
         display: flex;
@@ -13,14 +25,41 @@
         flex-direction: column;
     }
     
+    .header {
+        font-family: zidanFont;
+        align-self: flex-start;
+        margin-top: 0px;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .appGround {
+        display: flex;
+        gap: 60px;
+    }
+    
+    .appAsside {
+        font-family: zidanFont;
+        font-size: 30px;
+        display: flex;
+        width: 600px;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .bodyContainer {
+        margin-top: 30px;
+        margin-bottom: 120px;
         background-color: red;
         display: flex;
         flex-direction: column;
         border: 10px solid #d12520;
         border-radius: 60px;
-        height: 50%;
-        width: 90%;
+        height: 480px;
+        width: 800px;
         align-items: center;
         gap: 20px;
     }
@@ -132,12 +171,78 @@
         border: 1px solid rgb(117, 107, 107, 0.1);
         background-color: var(--bg-color);
     }
-    /*
-    .square:hover {
-        background-color: var(--picked-color);
-    }
-    */
     
     input {
         cursor: pointer;
+    }
+    /* animation*/
+    
+    .disc {
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        width: 100px;
+        border-radius: 100%;
+        opacity: 0.6;
+        background-image: linear-gradient(red, yellow, blue);
+        position: relative;
+        animation: cercleAnim 15s infinite;
+        transition: width 3s, height 3s;
+        cursor: pointer;
+    }
+    
+    @keyframes cercleAnim {
+        0% {
+            left: 60px;
+        }
+        40% {
+            left: 530px;
+        }
+        50% {
+            left: 60px;
+            top: 40px;
+            transform: rotate(360deg);
+        }
+        60% {
+            left: 530px;
+            top: 40px;
+        }
+        80% {
+            left: 60px;
+            top: 80px;
+        }
+        90% {
+            left: 530px;
+            top: 80px;
+        }
+        100% {
+            left: 530px;
+        }
+    }
+    /* square animation*/
+    
+    .squareAnim {
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        animation: squareAnimation 7s infinite;
+        animation-direction: alternate;
+        background-color: #224902;
+        opacity: 0.4;
+        position: absolute;
+        cursor: pointer;
+        transition: transform 3s;
+    }
+    
+    .squareAnim:hover {
+        transform: rotate(360deg);
+    }
+    
+    @keyframes squareAnimation {
+        0% {
+            left: 720px;
+        }
+        100% {
+            left: 1100px;
+        }
     }

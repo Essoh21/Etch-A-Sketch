@@ -10,32 +10,49 @@
 </head>
 
 <body>
-    <div class="bodyContainer">
-        <div class="title"> Etch A Sketch</div>
-        <div class="userScreenContainer">
-            <div class="colorModes">
-                <input class="colorContainer leftSide" type="color" value="#333300">
-                <button class="rainbow"> </button>
-            </div>
+    <div class="header">
+
+        <h1> Your favorite etch a Sketch</h1>
+        <div class="squareAnim"> </div>
+    </div>
+    <div class="appGround">
+        <div class="appAsside">
+            <div class="disc d1"></div>
 
 
-            <div class="squaresContainer"> </div>
-            <div class="rightButtons">
-                <div class="button buttonToDraw"> Grid</div>
-                <div class="erase"> Erase </div>
-                <div class="button buttonToClear"> Clear</div>
+            <p>
+                You're welcome. <br>
+                <br> Choose the number of squares in your grid, click on the grid button then the color and let shine your imagination. You can select a specifique color or a random color.
+            </p>
+        </div>
 
-                <div class="range">
-                    <div class="numbers"> 15x15</div>
-                    <input type="range" id="squaresRange" min="1" max="100" value="15">
+        <div class="bodyContainer">
+            <div class="title"> Etch A Sketch</div>
+            <div class="userScreenContainer">
+                <div class="colorModes">
+                    <input class="colorContainer leftSide" type="color" value="#333300">
+                    <button class="rainbow"> </button>
                 </div>
+
+
+                <div class="squaresContainer"> </div>
+                <div class="rightButtons">
+                    <div class="button buttonToDraw"> Grid</div>
+                    <div class="erase"> Erase </div>
+                    <div class="button buttonToClear"> Clear</div>
+
+                    <div class="range">
+                        <div class="numbers"> 15x15</div>
+                        <input type="range" id="squaresRange" min="1" max="100" value="15">
+                    </div>
+                </div>
+
             </div>
 
         </div>
-
     </div>
     <div class="copyright">
-        <p>Copyright &copy; Essohanam 2022 </p>
+        <p><a href="https://github.com/Essoh21">Copyright &copy;  Essohanam 2022 </a> </p>
     </div>
     <script src="etchAsketch.js"></script>
 </body>

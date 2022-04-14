@@ -107,3 +107,22 @@ rainbow.onclick = () => {
     color = `rgb(${amountOfRed}, ${amountOfGreen}, ${amountOfBlue})`;
 };
 erase.onmousedown = () => { color = '#fff' };
+// cercle animation event
+let disc = document.querySelector('.disc');
+disc.addEventListener('click', () => {
+    disc.style.width = '150px';
+    disc.style.height = '150px';
+})
+disc.addEventListener('mouseover', () => {
+    disc.style.width = '100px';
+    disc.style.height = '50px';
+
+});
+// title animation event
+//let squareAnim = document.querySelector('.squareAnim');
+//squareAnim.addEventListener('click', () => {
+//  squareAnim.style.transform = 'rotate(360deg)';
+//});
+//squareAnim.addEventListener('mouseover', () => {
+//  alert('hi');
+//})
