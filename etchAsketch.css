@@ -1,248 +1,621 @@
-    @font-face {
-        font-family: "perfectDark";
-        src: url("pdark.ttf");
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "perfectDark";
+    src: url("pdark.ttf");
+}
+
+@font-face {
+    font-family: "zidanFont";
+    src: url("Zidan.ttf");
+}
+
+a {
+    text-decoration: none;
+    color: #113
+}
+
+body {
+    padding: 0px;
+    height: 100vh;
+    margin: 0px;
+    width: 100vw;
+    background-color: #ece5e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    font-family: zidanFont;
+    align-self: flex-start;
+    margin-top: 0px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appGround {
+    display: flex;
+    gap: 60px;
+}
+
+.appAsside {
+    font-family: zidanFont;
+    font-size: 30px;
+    display: flex;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bodyContainer {
+    margin-top: 30px;
+    margin-bottom: 120px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #d12520;
+    border-radius: 60px;
+    height: 480px;
+    width: 800px;
+    align-items: center;
+    gap: 20px;
+}
+
+.userScreenContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    --picked-color: #eef;
+}
+
+.squaresContainer {
+    width: 390px;
+    height: 390px;
+    background-color: #fff;
+    border: 0.5px solid #d15520;
+    border-radius: 20px;
+    --bg-color: #fff;
+}
+
+.rightButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.button {
+    font-weight: bold;
+    font-family: Impact;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 70px;
+    border: 2px solid #224902;
+    border-radius: 20px;
+    background-color: rgb(240, 241, 221);
+    color: rgba(12, 12, 9, 0.938);
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.button:hover {
+    background-color: rgba(231, 155, 41, 0.589);
+}
+
+.erase {
+    font-weight: bold;
+    font-family: Impact;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 70px;
+    border: 2px solid #224902;
+    border-radius: 20px;
+    background-color: rgb(240, 241, 221);
+    color: rgba(12, 12, 9, 0.938);
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.erase:hover {
+    background-color: rgba(231, 155, 41, 0.589);
+}
+
+.button:active {
+    border-color: #fff;
+}
+
+.erase:active {
+    border-color: #fff;
+}
+
+.numbers {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.squaresNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    border: 1px solid #d12520;
+    border-radius: 200px;
+    background-color: beige;
+}
+
+.colorModes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.rainbow {
+    color: #eef;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    background-image: conic-gradient( red, orange, yellow, green, blue, indigo, violet);
+}
+
+.colorContainer {
+    height: 200px;
+    border-radius: 10px;
+}
+
+.title {
+    color: yellow;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: perfectDark;
+}
+
+.square {
+    border: 1px solid rgb(117, 107, 107, 0.1);
+    background-color: var(--bg-color);
+}
+
+input {
+    cursor: pointer;
+}
+
+
+/* animation*/
+
+.disc {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100px;
+    border-radius: 100%;
+    opacity: 0.6;
+    background-image: linear-gradient(red, yellow, blue);
+    position: relative;
+    animation: cercleAnim 15s infinite;
+    transition: width 3s, height 3s;
+    cursor: pointer;
+}
+
+@keyframes cercleAnim {
+    0% {
+        left: 60px;
     }
-    
-    @font-face {
-        font-family: "zidanFont";
-        src: url("Zidan.ttf");
+    40% {
+        left: 530px;
     }
-    
-    a {
-        text-decoration: none;
-        color: #113
+    50% {
+        left: 60px;
+        top: 40px;
+        transform: rotate(360deg);
     }
-    
-    body {
-        padding: 0px;
-        height: 100vh;
-        margin: 0px;
-        width: 100vw;
-        background-color: #ece5e6;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    60% {
+        left: 530px;
+        top: 40px;
     }
-    
-    .header {
-        font-family: zidanFont;
-        align-self: flex-start;
-        margin-top: 0px;
-        height: 100px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    80% {
+        left: 60px;
+        top: 80px;
     }
-    
+    90% {
+        left: 530px;
+        top: 80px;
+    }
+    100% {
+        left: 530px;
+    }
+}
+
+
+/* square animation*/
+
+.squareAnim {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    animation: squareAnimation 7s infinite;
+    animation-direction: alternate;
+    background-color: #224902;
+    opacity: 0.4;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 3s;
+}
+
+.squareAnim:hover {
+    transform: rotate(360deg);
+}
+
+@keyframes squareAnimation {
+    0% {
+        left: 720px;
+    }
+    100% {
+        left: 1100px;
+    }
+}
+
+
+/* make it responsive on small devices*/
+
+
+/* screen    width <= 1500;  */
+
+@media only screen and (max-width:1500px) {
     .appGround {
-        display: flex;
-        gap: 60px;
+        flex-direction: column;
+        gap: 15px;
     }
-    
-    .appAsside {
-        font-family: zidanFont;
-        font-size: 30px;
-        display: flex;
-        width: 600px;
-        align-items: center;
-        justify-content: center;
-    }
-    
     .bodyContainer {
-        margin-top: 30px;
-        margin-bottom: 120px;
-        background-color: red;
-        display: flex;
-        flex-direction: column;
-        border: 10px solid #d12520;
-        border-radius: 60px;
-        height: 480px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    .appAsside {
+        font-size: 25px;
         width: 800px;
-        align-items: center;
-        gap: 20px;
     }
-    
-    .userScreenContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        --picked-color: #eef;
-    }
-    
-    .squaresContainer {
-        width: 410px;
-        height: 410px;
-        background-color: #fff;
-        border: 0.5px solid #d15520;
-        border-radius: 20px;
-        --bg-color: #fff;
-    }
-    
-    .rightButtons {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        align-items: center;
-    }
-    
-    .button {
-        font-weight: bold;
-        font-family: Impact;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 20px;
-        width: 70px;
-        border: 2px solid #224902;
-        border-radius: 20px;
-        background-color: rgb(240, 241, 221);
-        color: rgba(12, 12, 9, 0.938);
-        cursor: pointer;
-    }
-    
-    .erase {
-        font-weight: bold;
-        font-family: Impact;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 20px;
-        width: 70px;
-        border: 2px solid #224902;
-        border-radius: 20px;
-        background-color: rgb(240, 241, 221);
-        color: rgba(12, 12, 9, 0.938);
-        cursor: pointer;
-    }
-    
-    .button:active {
-        border-color: #fff;
-    }
-    
-    .numbers {
-        color: #fff;
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-    }
-    
-    .squaresNumber {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 125px;
-        border: 1px solid #d12520;
-        border-radius: 200px;
-        background-color: beige;
-    }
-    
-    .colorModes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .rainbow {
-        color: #eef;
-        cursor: pointer;
-        height: 60px;
-        width: 60px;
-        border-radius: 50px;
-        background-image: conic-gradient( red, orange, yellow, green, blue, indigo, violet);
-    }
-    
-    .colorContainer {
-        height: 200px;
-        border-radius: 10px;
-    }
-    
-    .title {
-        color: yellow;
-        font-size: 25px;
-        font-weight: 800;
-        font-family: perfectDark;
-    }
-    
-    .square {
-        border: 1px solid rgb(117, 107, 107, 0.1);
-        background-color: var(--bg-color);
-    }
-    
-    input {
-        cursor: pointer;
-    }
-    /* animation*/
-    
-    .disc {
-        display: flex;
-        flex-direction: row;
-        height: 50px;
-        width: 100px;
-        border-radius: 100%;
-        opacity: 0.6;
-        background-image: linear-gradient(red, yellow, blue);
-        position: relative;
-        animation: cercleAnim 15s infinite;
-        transition: width 3s, height 3s;
-        cursor: pointer;
-    }
-    
     @keyframes cercleAnim {
         0% {
-            left: 60px;
+            left: 50px;
         }
         40% {
-            left: 530px;
+            left: 730px;
         }
         50% {
-            left: 60px;
+            left: 50px;
+            top: 20px;
+            transform: rotate(360deg);
+        }
+        60% {
+            left: 730px;
+            top: 20px;
+        }
+        80% {
+            left: 50px;
             top: 40px;
+        }
+        90% {
+            left: 730px;
+            top: 40px;
+        }
+        100% {
+            left: 730px;
+        }
+    }
+    @keyframes squareAnimation {
+        0% {
+            left: 500px;
+        }
+        100% {
+            left: 930px;
+        }
+    }
+}
+
+
+/* screen    width in  1000- 1500;  */
+
+@media only screen and (max-width:1000px) {
+    .appGround {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .bodyContainer {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    .appAsside {
+        font-size: 20px;
+        width: 800px;
+    }
+    @keyframes cercleAnim {
+        0% {
+            left: 50px;
+        }
+        40% {
+            left: 730px;
+        }
+        50% {
+            left: 50px;
+            top: 20px;
+            transform: rotate(360deg);
+        }
+        60% {
+            left: 730px;
+            top: 20px;
+        }
+        80% {
+            left: 50px;
+            top: 40px;
+        }
+        90% {
+            left: 730px;
+            top: 40px;
+        }
+        100% {
+            left: 730px;
+        }
+    }
+    @keyframes squareAnimation {
+        0% {
+            left: 110px;
+        }
+        100% {
+            left: 730px;
+        }
+    }
+}
+
+
+/* screen    width in 800-1000;  */
+
+@media only screen and (max-width:1000px) {
+    .header {
+        font-size: 20px;
+    }
+    .appGround {
+        gap: 8px;
+    }
+    .bodyContainer {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .appAsside {
+        font-size: 15px;
+        width: 600px;
+    }
+}
+
+
+/* screen    width <800;  */
+
+@media only screen and (max-width:800px) {
+    .header {
+        font-size: 15px;
+    }
+    .appGround {
+        gap: 5px;
+    }
+    .bodyContainer {
+        margin-top: 8px;
+        margin-bottom: 15px;
+        height: 60vh;
+        width: 98vw;
+    }
+    .appAsside {
+        font-size: 15px;
+        width: 500px;
+    }
+    .squaresContainer {
+        height: 250;
+        width: 250;
+    }
+    .button {
+        font-size: 12px;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #224902;
+        border-radius: 40px;
+        background-image: conic-gradient(rgb(128, 109, 59), #4d4d03);
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+    }
+    .erase {
+        font-size: 12px;
+        height: 40px;
+        width: 40px;
+        border: 2px solid #224902;
+        border-radius: 40px;
+        background-image: conic-gradient(rgb(128, 109, 59), #4d4d03);
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+    }
+    .range {
+        max-width: 40px;
+    }
+    #squaresRange {
+        max-width: 50px;
+    }
+    .numbers {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .colorModes {
+        max-width: 60px;
+    }
+    .rainbow {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
+    .colorContainer {
+        width: 40px;
+        border-radius: 8px;
+    }
+    @keyframes cercleAnim {
+        0% {
+            left: 50px;
+        }
+        40% {
+            left: 390px;
+        }
+        50% {
+            left: 50px;
+            top: 20px;
             transform: rotate(360deg);
         }
         60% {
             left: 530px;
-            top: 40px;
+            top: 20px;
         }
         80% {
-            left: 60px;
-            top: 80px;
+            left: 50px;
+            top: 40px;
         }
         90% {
             left: 530px;
-            top: 80px;
+            top: 40px;
+        }
+        100% {
+            left: 390px;
+        }
+    }
+    @keyframes squareAnimation {
+        0% {
+            left: 110px;
         }
         100% {
             left: 530px;
         }
     }
-    /* square animation*/
-    
-    .squareAnim {
-        width: 50px;
-        height: 50px;
-        border-radius: 6px;
-        animation: squareAnimation 7s infinite;
-        animation-direction: alternate;
-        background-color: #224902;
-        opacity: 0.4;
-        position: absolute;
+}
+
+
+/* width <=600 */
+
+@media only screen and (max-width:600px) {
+    .header {
+        font-size: 12px;
+    }
+    .appGround {
+        gap: 3px;
+    }
+    .bodyContainer {
+        margin-top: 6px;
+        margin-bottom: 10px;
+        height: 65vh;
+        width: 98vw;
+    }
+    .appAsside {
+        font-size: 12px;
+        width: 400px;
+    }
+    .squaresContainer {
+        height: 700;
+        width: 700;
+    }
+    .button {
+        font-size: 10px;
+        height: 38px;
+        width: 38px;
+        border: 2px solid #224902;
+        border-radius: 38px;
+        background-image: conic-gradient(rgb(128, 109, 59), #4d4d03);
+        color: #fff;
         cursor: pointer;
-        transition: transform 3s;
+        transition: background-color 0.5s ease;
     }
-    
-    .squareAnim:hover {
-        transform: rotate(360deg);
+    .erase {
+        font-size: 10px;
+        height: 38px;
+        width: 38px;
+        border: 2px solid #224902;
+        border-radius: 38px;
+        background-image: conic-gradient(rgb(128, 109, 59), #4d4d03);
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
     }
-    
-    @keyframes squareAnimation {
+    .range {
+        max-width: 30px;
+    }
+    #squaresRange {
+        max-width: 70px;
+    }
+    .numbers {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .rainbow {
+        height: 30px;
+        width: 35px;
+        border-radius: 25px;
+    }
+    .colorContainer {
+        height: 30px;
+        width: 70px;
+        border-radius: 6px;
+    }
+    @keyframes cercleAnim {
         0% {
-            left: 720px;
+            left: 50px;
+        }
+        40% {
+            left: 370px;
+        }
+        50% {
+            left: 50px;
+            top: 20px;
+            transform: rotate(360deg);
+        }
+        60% {
+            left: 370px;
+            top: 20px;
+        }
+        80% {
+            left: 50px;
+            top: 40px;
+        }
+        90% {
+            left: 370px;
+            top: 40px;
         }
         100% {
-            left: 1100px;
+            left: 370px;
         }
     }
+    @keyframes squareAnimation {
+        0% {
+            left: 110px;
+        }
+        100% {
+            left: 370px;
+        }
+    }
+    .userScreenContainer {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .colorModes {
+        flex-direction: row;
+    }
+    .rightButtons {
+        flex-direction: row;
+    }
+}

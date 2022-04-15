@@ -14,8 +14,17 @@ let mouseDown = false;
 let colorPicker = colorContainer.value;
 let color = colorPicker;
 let numberOfSquares = squaresRange.value;
-let squaresContainerWidth = 410;
-let squaresContainerHeight = 410;
+
+// let get the width and height values in order to make easy the responsive part
+let squaresContainerCssStyleDeclarationObj = window.getComputedStyle(squaresContainer);
+let sqContainerWidth = squaresContainerCssStyleDeclarationObj.getPropertyValue('width');
+let widthLenght = sqContainerWidth.length;
+
+let sqContainerHeight = squaresContainerCssStyleDeclarationObj.getPropertyValue('height');
+let heightLenght = sqContainerWidth.length;
+
+let squaresContainerWidth = sqContainerWidth.substring(0, widthLenght - 2);
+let squaresContainerHeight = sqContainerHeight.substring(0, widthLenght - 2);
 let squaresContainerArea = squaresContainerHeight * squaresContainerWidth;
 
 // function to draw squares when number of squares is inputed
@@ -118,6 +127,7 @@ disc.addEventListener('mouseover', () => {
     disc.style.height = '50px';
 
 });
+
 // title animation event
 //let squareAnim = document.querySelector('.squareAnim');
 //squareAnim.addEventListener('click', () => {
@@ -126,3 +136,4 @@ disc.addEventListener('mouseover', () => {
 //squareAnim.addEventListener('mouseover', () => {
 //  alert('hi');
 //})
+//alert(squaresContainerCssStyleDeclarationObj.getPropertyValue('width').substring(0, widthLenght - 2));
