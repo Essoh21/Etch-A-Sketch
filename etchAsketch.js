@@ -127,13 +127,3 @@ disc.addEventListener('mouseover', () => {
     disc.style.height = '50px';
 
 });
-
-// title animation event
-//let squareAnim = document.querySelector('.squareAnim');
-//squareAnim.addEventListener('click', () => {
-//  squareAnim.style.transform = 'rotate(360deg)';
-//});
-//squareAnim.addEventListener('mouseover', () => {
-//  alert('hi');
-//})
-//alert(squaresContainerCssStyleDeclarationObj.getPropertyValue('width').substring(0, widthLenght - 2));
